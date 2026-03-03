@@ -19,12 +19,12 @@ export default function Homepage() {
         <ReferenceSquareSlideshow />
       </div>
 
-      <div className="mx-auto w-full max-w-[520px] pb-4">
-        <div className="grid grid-cols-2 gap-x-14 gap-y-4 border-t border-black pt-3 text-center">
-          <Link href="/music" className="menu-label block text-[28px] leading-none tracking-[0.08em] md:text-[44px]">Records~</Link>
-          <Link href="/events" className="menu-label block text-[28px] leading-none tracking-[0.08em] md:text-[44px]">Events~</Link>
-          <Link href="/about" className="menu-label block text-[28px] leading-none tracking-[0.08em] md:text-[44px]">About~</Link>
-          <Link href="/contact" className="menu-label block text-[28px] leading-none tracking-[0.08em] md:text-[44px]">Connect+</Link>
+      <div className="mx-auto w-full max-w-[560px] pb-4">
+        <div className="grid grid-cols-2 gap-x-14 gap-y-5 border-t border-black/70 pt-3 text-center">
+          <Link href="/music" className="block text-[26px] font-black uppercase leading-none tracking-[0.04em] md:text-[42px]">Records~</Link>
+          <Link href="/events" className="block text-[26px] font-black uppercase leading-none tracking-[0.04em] md:text-[42px]">Events~</Link>
+          <Link href="/about" className="block text-[26px] font-black uppercase leading-none tracking-[0.04em] md:text-[42px]">About~</Link>
+          <Link href="/contact" className="block text-[26px] font-black uppercase leading-none tracking-[0.04em] md:text-[42px]">Connect+</Link>
         </div>
       </div>
     </section>
