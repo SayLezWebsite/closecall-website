@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Link from "next/link";
 import "./globals.css";
-import SiteNav from "@/components/SiteNav";
 import TransitionShell from "@/components/TransitionShell";
 
 const closecallMain = localFont({
@@ -24,13 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${closecallMain.variable} ${closecallSub.variable} antialiased`}>
-        <header className="fixed inset-x-0 top-0 z-50 border-b border-white/20 bg-black/70 backdrop-blur-xl">
-          <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-5 px-5 py-4 md:px-8">
-            <Link href="/" className="brand-title text-2xl md:text-3xl">CLOSECALL</Link>
-            <SiteNav />
-          </nav>
-        </header>
-        <main className="pt-20 md:pt-24">
+        <main>
           <TransitionShell>{children}</TransitionShell>
         </main>
       </body>
