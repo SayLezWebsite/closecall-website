@@ -4,31 +4,24 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
-  ["Homepage", "/"],
-  ["About", "/about"],
-  ["Music", "/music"],
-  ["Events", "/events"],
-  ["Merch", "/merch"],
-  ["Contact", "/contact"],
+  ["Homepage~", "/"],
+  ["About~", "/about"],
+  ["Music~", "/music"],
+  ["Events~", "/events"],
+  ["Merch~", "/merch"],
+  ["Connect+", "/contact"],
 ] as const;
 
 export default function SiteNav() {
   const pathname = usePathname();
 
   return (
-    <div className="no-scrollbar flex gap-5 overflow-x-auto text-[11px] uppercase tracking-[0.22em] text-white/85 md:text-xs">
-      {links.map(([label, href]) => {
-        const active = pathname === href;
-        return (
-          <Link
-            key={href}
-            href={href}
-            className={`nav-link whitespace-nowrap ${active ? "active text-white" : "text-white/65 hover:text-white"}`}
-          >
-            / {label}
-          </Link>
-        );
-      })}
+    <div className="no-scrollbar flex gap-4 overflow-x-auto text-[11px] uppercase tracking-[0.22em] text-white md:text-xs">
+      {links.map(([label, href]) => (
+        <Link key={href} href={href} className={`nav-link whitespace-nowrap ${pathname === href ? "active" : ""}`}>
+          {label}
+        </Link>
+      ))}
     </div>
   );
 }

@@ -20,19 +20,13 @@ export const metadata: Metadata = {
   description: "Closecall official website",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`${closecallMain.variable} ${closecallSub.variable} antialiased`}>
-        <header className="fixed inset-x-0 top-0 z-50 border-b border-white/15 bg-black/55 backdrop-blur-xl">
-          <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-5 py-4 md:px-8">
-            <Link href="/" className="brand-title text-2xl text-white md:text-3xl">
-              CLOSECALL
-            </Link>
+        <header className="fixed inset-x-0 top-0 z-50 border-b border-white/20 bg-black/70 backdrop-blur-xl">
+          <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-5 px-5 py-4 md:px-8">
+            <Link href="/" className="brand-title text-2xl md:text-3xl">CLOSECALL</Link>
             <SiteNav />
           </nav>
         </header>
