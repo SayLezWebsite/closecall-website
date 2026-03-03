@@ -19,7 +19,7 @@ export const closecallEvents: EventItem[] = [
     eventUrl: "https://skatecafe.weticket.io/closecall",
   },
   {
-    title: "KUMO invites: CLOSECALL",
+    title: "KUMO invites: Closecall",
     venue: "Parallel",
     city: "Amsterdam",
     date: "5 December 2025 · 23:59–05:00",
