@@ -23,9 +23,9 @@ export default function SiteNav() {
           <Link
             key={href}
             href={href}
-            className={`whitespace-nowrap transition ${active ? "text-white" : "text-white/65 hover:text-white"}`}
+            className={`nav-link whitespace-nowrap ${active ? "active text-white" : "text-white/65 hover:text-white"}`}
           >
-            {label}
+            / {label}
           </Link>
         );
       })}

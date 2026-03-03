@@ -11,37 +11,34 @@ export default function Homepage() {
           alt="Closecall flyer"
           fill
           priority
-          className="object-cover opacity-30"
+          className="object-cover opacity-28"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/72 to-[#050505]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/72 to-[#050505]" />
 
-        <div className="relative mx-auto w-full max-w-7xl px-5 pb-10 pt-20 md:px-8 md:pt-24">
-          <p className="mb-5 text-[10px] uppercase tracking-[0.34em] text-white/65 md:text-xs">Closecall · Amsterdam</p>
-          <h1 className="section-title max-w-6xl text-6xl leading-[0.82] md:text-9xl">Closecall</h1>
+        <div className="relative mx-auto grid min-h-[83vh] w-full max-w-7xl grid-rows-[1fr_auto] px-5 pb-8 pt-20 md:px-8 md:pt-24">
+          <div className="self-end">
+            <p className="meta-kicker mb-5">Closecall / Amsterdam / Night Series</p>
+            <h1 className="section-title max-w-6xl text-6xl leading-[0.79] md:text-[9.5rem]">Engineered for late-night energy</h1>
+          </div>
 
-          <div className="mt-10 grid gap-8 border-t border-white/15 pt-6 md:grid-cols-[1fr_1fr]">
+          <div className="mt-10 grid gap-8 border-t border-white/15 pt-5 md:grid-cols-[1fr_1.1fr]">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.24em] text-white/55">Identity</p>
-              <p className="mt-3 max-w-2xl text-sm text-white/74 md:text-base">
-                A nightlife platform built around movement, visual impact, and genre-fluid club energy.
-                Designed to feel raw, sharp, and cinematic.
+              <p className="meta-kicker">Manifesto</p>
+              <p className="mt-3 max-w-xl text-sm text-white/72 md:text-base">
+                Closecall blends underground rhythm, hard visual contrast, and high-pressure lineups into nights that move like cinema.
               </p>
-              <div className="mt-6 flex gap-3">
-                <Link href="/events" className="rounded-full border border-white px-5 py-2 text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black">Events</Link>
-                <Link href="/music" className="rounded-full border border-white/40 px-5 py-2 text-xs uppercase tracking-[0.2em] text-white/85 hover:border-white">Music</Link>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link href="/events" className="rounded-full border border-white px-5 py-2 text-xs uppercase tracking-[0.2em] transition hover:bg-white hover:text-black">Events</Link>
+                <Link href="/music" className="rounded-full border border-white/40 px-5 py-2 text-xs uppercase tracking-[0.2em] text-white/85 transition hover:border-white">Music</Link>
               </div>
             </div>
 
-            <div className="grid gap-2 text-sm text-white/82 md:text-base">
-              <p className="text-[10px] uppercase tracking-[0.24em] text-white/55">Upcoming / Recent</p>
+            <div className="grid content-start gap-2">
+              <p className="meta-kicker">Program index</p>
               {closecallEvents.map((event) => (
-                <Link
-                  key={event.title + event.date}
-                  href="/events"
-                  className="group border-b border-white/10 py-2 transition hover:border-white/40"
-                >
+                <Link key={event.title + event.date} href="/events" className="group border-b border-white/10 py-2 transition hover:border-white/45">
                   <p className="section-title text-2xl leading-tight md:text-3xl">{event.title}</p>
-                  <p className="text-xs uppercase tracking-[0.14em] text-white/58 group-hover:text-white/80">{event.venue} · {event.date}</p>
+                  <p className="text-xs uppercase tracking-[0.14em] text-white/58 transition group-hover:text-white/82">{event.venue} · {event.date}</p>
                 </Link>
               ))}
             </div>
@@ -49,22 +46,24 @@ export default function Homepage() {
         </div>
       </section>
 
-      <section className="mx-auto grid w-full max-w-7xl gap-5 px-5 py-14 md:grid-cols-3 md:px-8">
-        {[
-          ["About", "Who we are and what we build."],
-          ["Merch", "Limited releases and future store drops."],
-          ["Contact", "Bookings, partnerships, and collaborations."],
-        ].map(([item, sub]) => (
-          <Link
-            key={item}
-            href={`/${item.toLowerCase()}`}
-            className="group rounded-2xl border border-white/15 bg-white/[0.02] p-6 transition hover:-translate-y-0.5 hover:bg-white/[0.06]"
-          >
-            <p className="section-title text-3xl">{item}</p>
-            <p className="mt-3 text-sm text-white/72">{sub}</p>
-            <p className="mt-6 text-xs uppercase tracking-[0.2em] text-white/55 group-hover:text-white/85">Enter</p>
-          </Link>
-        ))}
+      <section className="mx-auto w-full max-w-7xl px-5 py-14 md:px-8">
+        <div className="grid gap-5 md:grid-cols-3">
+          {[
+            ["About", "Identity, direction, and culture frame."],
+            ["Merch", "Future drops with store integration placeholder."],
+            ["Contact", "Bookings, partnerships, social links."],
+          ].map(([item, sub]) => (
+            <Link
+              key={item}
+              href={`/${item.toLowerCase()}`}
+              className="group rounded-2xl border border-white/15 bg-white/[0.02] p-6 transition duration-300 hover:-translate-y-0.5 hover:bg-white/[0.07]"
+            >
+              <p className="section-title text-3xl">{item}</p>
+              <p className="mt-3 text-sm text-white/72">{sub}</p>
+              <p className="mt-6 text-xs uppercase tracking-[0.2em] text-white/55 transition group-hover:text-white/86">Enter</p>
+            </Link>
+          ))}
+        </div>
       </section>
     </div>
   );
