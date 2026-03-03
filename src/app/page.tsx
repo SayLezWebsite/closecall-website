@@ -19,12 +19,12 @@ export default function Homepage() {
         <ReferenceSquareSlideshow />
       </div>
 
-      <div className="mx-auto w-full max-w-[420px] pb-4">
-        <div className="grid grid-cols-2 gap-x-10 gap-y-3 border-t border-black pt-3 text-center">
-          <Link href="/music" className="menu-label text-3xl md:text-4xl">Records~</Link>
-          <Link href="/events" className="menu-label text-3xl md:text-4xl">Events~</Link>
-          <Link href="/about" className="menu-label text-3xl md:text-4xl">About~</Link>
-          <Link href="/contact" className="menu-label text-3xl md:text-4xl">Connect+</Link>
+      <div className="mx-auto w-full max-w-[520px] pb-4">
+        <div className="grid grid-cols-2 gap-x-14 gap-y-4 border-t border-black pt-3 text-center">
+          <Link href="/music" className="menu-label block text-[28px] leading-none tracking-[0.08em] md:text-[44px]">Records~</Link>
+          <Link href="/events" className="menu-label block text-[28px] leading-none tracking-[0.08em] md:text-[44px]">Events~</Link>
+          <Link href="/about" className="menu-label block text-[28px] leading-none tracking-[0.08em] md:text-[44px]">About~</Link>
+          <Link href="/contact" className="menu-label block text-[28px] leading-none tracking-[0.08em] md:text-[44px]">Connect+</Link>
         </div>
       </div>
     </section>

@@ -39,9 +39,13 @@ export default function ReferenceSquareSlideshow() {
           alt="Closecall slide"
           fill
           priority={i < 2}
-          className={`object-cover transition-opacity duration-300 ${i === index ? "opacity-100" : "opacity-0"}`}
+          className={`object-cover saturate-110 contrast-125 brightness-90 transition-opacity duration-300 ${i === index ? "opacity-100" : "opacity-0"}`}
         />
       ))}
+
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(255,255,255,0.22),transparent_42%),linear-gradient(165deg,rgba(0,0,0,0.06),rgba(0,0,0,0.48))]" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.22] [background-image:radial-gradient(rgba(0,0,0,0.9)_0.5px,transparent_0.5px)] [background-size:3px_3px] mix-blend-multiply" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:linear-gradient(0deg,rgba(255,255,255,0.9)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.9)_1px,transparent_1px)] [background-size:120px_120px]" />
     </div>
   );
 }
