@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Link from "next/link";
 import "./globals.css";
+import SiteNav from "@/components/SiteNav";
+import TransitionShell from "@/components/TransitionShell";
 
 const closecallMain = localFont({
   src: "../../public/brand/fonts/closecall-main.otf",
@@ -18,15 +20,6 @@ export const metadata: Metadata = {
   description: "Closecall official website",
 };
 
-const links = [
-  ["Homepage", "/"],
-  ["About", "/about"],
-  ["Music", "/music"],
-  ["Events", "/events"],
-  ["Merch", "/merch"],
-  ["Contact", "/contact"],
-] as const;
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -40,16 +33,12 @@ export default function RootLayout({
             <Link href="/" className="brand-title text-2xl text-white md:text-3xl">
               CLOSECALL
             </Link>
-            <div className="no-scrollbar flex gap-5 overflow-x-auto text-[11px] uppercase tracking-[0.22em] text-white/85 md:text-xs">
-              {links.map(([label, href]) => (
-                <Link key={href} href={href} className="whitespace-nowrap hover:text-white">
-                  {label}
-                </Link>
-              ))}
-            </div>
+            <SiteNav />
           </nav>
         </header>
-        <main className="pt-20 md:pt-24">{children}</main>
+        <main className="pt-20 md:pt-24">
+          <TransitionShell>{children}</TransitionShell>
+        </main>
       </body>
     </html>
   );

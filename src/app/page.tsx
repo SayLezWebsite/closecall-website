@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Homepage() {
   return (
@@ -11,29 +12,38 @@ export default function Homepage() {
           priority
           className="object-cover opacity-35"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/70 to-[#050505]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/70 to-[#050505]" />
 
-        <div className="relative mx-auto flex min-h-[84vh] w-full max-w-7xl flex-col justify-end px-5 pb-14 pt-20 md:px-8">
-          <p className="mb-3 text-[10px] uppercase tracking-[0.32em] text-white/70 md:text-xs">Amsterdam nightlife collective</p>
-          <h1 className="section-title max-w-5xl text-5xl leading-[0.9] md:text-8xl">Closecall</h1>
-          <p className="mt-6 max-w-2xl text-sm text-white/75 md:text-base">
-            Rhythm-first events, graphic-heavy visuals, intimate dance floors.
-            Built for people who stay late and move hard.
-          </p>
+        <div className="relative mx-auto grid min-h-[82vh] w-full max-w-7xl grid-rows-[1fr_auto] px-5 pb-10 pt-16 md:px-8 md:pt-20">
+          <div className="self-end">
+            <p className="mb-4 text-[10px] uppercase tracking-[0.34em] text-white/70 md:text-xs">Closecall · Amsterdam</p>
+            <h1 className="section-title max-w-5xl text-6xl leading-[0.85] md:text-9xl">Night Culture For The Restless</h1>
+          </div>
+
+          <div className="mt-8 grid gap-6 border-t border-white/15 pt-5 md:grid-cols-[1.3fr_1fr]">
+            <p className="max-w-2xl text-sm text-white/72 md:text-base">
+              Closecall is a nightlife concept blending cutting-edge club music, immersive visuals,
+              and high-energy lineups. Designed with a raw, editorial edge.
+            </p>
+            <div className="flex flex-wrap gap-3 md:justify-end">
+              <Link href="/events" className="rounded-full border border-white px-5 py-2 text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black">Explore Events</Link>
+              <Link href="/music" className="rounded-full border border-white/40 px-5 py-2 text-xs uppercase tracking-[0.2em] text-white/85 hover:border-white">Listen</Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto grid w-full max-w-7xl gap-5 px-5 py-14 md:grid-cols-3 md:px-8">
-        {[
-          ["Next Event", "Closecall x Skatecafé", "Lineup + tickets will drop here."],
-          ["Latest Mix", "Closecall Radio Select", "Fresh sets and edits from the crew."],
-          ["Merch Drop", "Caps / Tees / Posters", "Limited capsules linked in merch tab."],
-        ].map(([kicker, title, desc]) => (
-          <article key={title} className="rounded-2xl border border-white/15 bg-white/[0.03] p-5">
-            <p className="text-[10px] uppercase tracking-[0.24em] text-white/60">{kicker}</p>
-            <h3 className="mt-3 section-title text-2xl leading-tight">{title}</h3>
-            <p className="mt-3 text-sm text-white/72">{desc}</p>
-          </article>
+      <section className="mx-auto grid w-full max-w-7xl gap-5 px-5 py-16 md:grid-cols-3 md:px-8">
+        {["Events", "Music", "Merch"].map((item) => (
+          <Link
+            key={item}
+            href={`/${item.toLowerCase()}`}
+            className="group rounded-2xl border border-white/15 bg-white/[0.02] p-6 transition hover:bg-white/[0.06]"
+          >
+            <p className="section-title text-3xl">{item}</p>
+            <p className="mt-3 text-sm text-white/72">Open {item.toLowerCase()} section</p>
+            <p className="mt-6 text-xs uppercase tracking-[0.2em] text-white/55 group-hover:text-white/80">Enter</p>
+          </Link>
         ))}
       </section>
     </div>
