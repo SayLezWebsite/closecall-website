@@ -39,7 +39,7 @@ export default function ReferenceSquareSlideshow() {
           alt="Closecall slide"
           fill
           priority={i < 2}
-          className={`object-cover saturate-110 contrast-125 brightness-90 transition-opacity duration-300 ${i === index ? "opacity-100" : "opacity-0"}`}
+          className={`object-cover saturate-110 contrast-125 brightness-90 transition-opacity duration-100 ${i === index ? "opacity-100" : "opacity-0"}`}
         />
       ))}
 
